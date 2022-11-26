@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <!-- Required meta tags-->
@@ -166,79 +166,41 @@
                         <div class="row m-t-30">
                             <div class="col-md-12">
                                 <h3 class="title-5 m-b-35">Enfermeras</h3>
-                                <!-- DATA TABLE-->
-                                <div class="table-responsive m-b-40">
+                                <!-- DATA TABLE-->   
+                                <div class="btnEnfermeras">
+                                <button class="btn btn-success" id="btn_enfermeras">Lista de Enfermeras</button>   
+                                </div>                         
+                                <div class="table-responsive m-b-40">                                   
                                     <table class="table table-borderless table-data3">
                                         <thead>
                                             <tr>
-                                                <th>Fecha</th>
-                                                <th>Nro de Orden</th>
-                                                <th>Nombre</th>
-                                                <th class="text-right">Medicamento
-                                                <th class="text-right">Tratamiento</th>
+                                                <th class="text-center">Fecha</th>
+                                                <th class="text-center">Nombre</th>
+                                                <th class="text-center">Apellido</th>
+                                                <th class="text-center">Hora Inicio</th>
+                                                <th class="text-center">Hora Fin</th>
+                                                <th class="text-center">Dia Laboral</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Inyectable</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
+                                        <tbody id="res">
+                                            
                                         </tbody>
                                     </table>
                                 </div>
                                 <!-- END DATA TABLE-->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>Copyright © 2022 FBQ.Salud. | All rights reserved. Template by Cofee Team</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT-->
                             </div>
                         </div>
                         <div class="row">
@@ -278,6 +240,7 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script src="js/nurses.js"></script>
 
 </body>
 

@@ -97,6 +97,65 @@ p {
     border-radius: 3px;
 }
 
+#btn_pacientes {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnPacientes {
+    padding-bottom: 20px;
+}
+
+#btn_turnos {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnTurnos {
+    padding-bottom: 20px;
+}
+
+#btn_enfermeras {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnEnfermeras {
+    padding-bottom: 20px;
+}
+
+#btn_insumos {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnInsumos {
+    padding-bottom: 20px;
+}
+
+#btn_usuarios {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnUsuarios {
+    padding-bottom: 20px;
+}
+
+#btn_masusuarios {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnmasusuarios {
+    padding-bottom: 20px;
+}
 /* ----- Typography ----- */
 body {
     font-family: "Poppins", sans-serif;
@@ -4280,7 +4339,7 @@ section {
 .table-top-countries tbody td {
     white-space: nowrap;
     font-size: 14px;
-    color: #fff;
+    color: #fff !important;
     padding: 14px 5px;
     border-top: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);

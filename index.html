@@ -194,7 +194,7 @@
                                                 <i class="zmdi zmdi-face"></i>
                                             </div>
                                             <div class="text">
-                                                <h2>38</h2>
+                                                <h2 id="emp"></h2>
                                                 <span>Enfermeras</span>
                                             </div>
                                         </div>
@@ -241,182 +241,46 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="au-card recent-report">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2">Atencion a pacientes</h3>
-                                        <div class="chart-info">
-                                            <div class="chart-info__left">
-                                                <div class="chart-note">
-                                                    <span class="dot dot--blue"></span>
-                                                    <span>Medicos</span>
-                                                </div>
-                                                <div class="chart-note mr-0">
-                                                    <span class="dot dot--green"></span>
-                                                    <span>Enfermeras</span>
-                                                </div>
-                                            </div>
-                                            <div class="chart-info__right">
-                                                <div class="chart-statis">
-                                                    <span class="index incre">
-                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
-                                                    <span class="label">Medicos</span>
-                                                </div>
-                                                <div class="chart-statis mr-0">
-                                                    <span class="index decre">
-                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
-                                                    <span class="label">Enfermeras</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="recent-report__chart">
-                                            <canvas id="recent-rep-chart"></canvas>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="au-card chart-percent-card">
-                                    <div class="au-card-inner">
-                                        <h3 class="title-2 tm-b-5">Por porcentaje %</h3>
-                                        <div class="row no-gutters">
-                                            <div class="col-xl-6">
-                                                <div class="chart-note-wrap">
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--blue"></span>
-                                                        <span>Medicos</span>
-                                                    </div>
-                                                    <div class="chart-note mr-0 d-block">
-                                                        <span class="dot dot--red"></span>
-                                                        <span>Enfermeras</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-6">
-                                                <div class="percent-chart">
-                                                    <canvas id="percent-chart"></canvas>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="col-lg-9">
-                                <h2 class="title-1 m-b-25">Orden de turnos</h2>
+                                <div class="btnTurnos">
+                                    <button class="btn btn-success" id="btn_turnos">Lista de turnos</button>   
+                                    </div> 
                                 <div class="table-responsive table--no-card m-b-40">
                                     <table class="table table-borderless table-striped table-earning">
                                         <thead>
                                             <tr>
-                                                <th>Fecha</th>
-                                                <th>Nro de Orden</th>
-                                                <th>Nombre</th>
-                                                <th class="text-right">Medico
-                                                <th class="text-right">Consulta</th>
+                                                <th class="text-center">Fecha</th>
+                                                <th class="text-center">Nro Turno</th>
+                                                <th class="text-center">Medico</th>
+                                                <th class="text-center">Paciente</th>
+                                                <th class="text-center">Observacion</th>
+                                                <th class="text-center">Estado del Turno</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2018-09-28 01:22</td>
-                                                <td>100397</td>
-                                                <td>Paciente</td>
-                                                <td class="text-right">Medico</td>
-                                                <td class="text-right">Gripe</td>
-                                            </tr>
+                                        <tbody id="res">
+                                            
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                             <div class="col-lg-3">
-                                <h2 class="title-1 m-b-25">Stock </h2>
+                                <div class="btnInsumos">
+                                    <button class="btn btn-success" id="btn_insumos_portal">Stock</button>   
+                                </div>
                                 <div class="au-card au-card--bg-blue au-card-top-countries m-b-40">
                                     <div class="au-card-inner">
                                         <div class="table-responsive">
                                             <table class="table table-top-countries">
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Suero</td>
-                                                        <td class="text-right">119</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Ibuprofeno</td>
-                                                        <td class="text-right">700</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Amoxilina</td>
-                                                        <td class="text-right">46</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jarabe Tos</td>
-                                                        <td class="text-right">35</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gotas ojos</td>
-                                                        <td class="text-right">96</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Gasas</td>
-                                                        <td class="text-right">10000</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jeringas</td>
-                                                        <td class="text-right">536696</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Alcohol en gel</td>
-                                                        <td class="text-right">16392</td>
-                                                    </tr>
+                                                <thead>
+                                                <tr>
+                                                    <th class="text-center" style="color: #fff;">Nombre</th>
+                                                    <th class="text-center" style="color: #fff;">Cantidad</th>
+                                                </tr>
+                                                 </thead>
+                                                <tbody id="rest">
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -671,6 +535,68 @@
                             </div>
                         </div>
                         <div class="row">
+                            <div class="col-lg-6">
+                                <div class="au-card recent-report">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2">Atencion a pacientes</h3>
+                                        <div class="chart-info">
+                                            <div class="chart-info__left">
+                                                <div class="chart-note">
+                                                    <span class="dot dot--blue"></span>
+                                                    <span>Medicos</span>
+                                                </div>
+                                                <div class="chart-note mr-0">
+                                                    <span class="dot dot--green"></span>
+                                                    <span>Enfermeras</span>
+                                                </div>
+                                            </div>
+                                            <div class="chart-info__right">
+                                                <div class="chart-statis">
+                                                    <span class="index incre">
+                                                        <i class="zmdi zmdi-long-arrow-up"></i>25%</span>
+                                                    <span class="label">Medicos</span>
+                                                </div>
+                                                <div class="chart-statis mr-0">
+                                                    <span class="index decre">
+                                                        <i class="zmdi zmdi-long-arrow-down"></i>10%</span>
+                                                    <span class="label">Enfermeras</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recent-report__chart">
+                                            <canvas id="recent-rep-chart"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="au-card chart-percent-card">
+                                    <div class="au-card-inner">
+                                        <h3 class="title-2 tm-b-5">Por porcentaje %</h3>
+                                        <div class="row no-gutters">
+                                            <div class="col-xl-6">
+                                                <div class="chart-note-wrap">
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--blue"></span>
+                                                        <span>Medicos</span>
+                                                    </div>
+                                                    <div class="chart-note mr-0 d-block">
+                                                        <span class="dot dot--red"></span>
+                                                        <span>Enfermeras</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6">
+                                                <div class="percent-chart">
+                                                    <canvas id="percent-chart"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
                                     <p>Copyright © 2022 FBQ.Salud. | All rights reserved. Template by Cofee Team</a>.</p>
@@ -709,6 +635,10 @@
 
     <!-- Main JS-->
     <script src="js/main.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/stock.js"></script>
+    <script src="js/stockPortal.js"></script>
+    <script src="js/showCantidad.js"></script>
 
 </body>
 
