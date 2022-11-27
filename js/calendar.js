@@ -2,6 +2,8 @@ const urlTurnos = 'https://localhost:7299/api/turnos';
 
 const buttonCrear = document.getElementById('agregar');
 
+const modal = document.getElementById('turnoModal');
+
 document.querySelector('#btn_turnos').addEventListener('click', getTurnos);
 
 function getTurnos(){
@@ -22,7 +24,7 @@ function getTurnos(){
             for(let item of datos){
                 res.innerHTML += `              
                 <tr class="large">
-                    <th class="text-center">${new Date(item.fechaTurno).toLocaleString()}</th>
+                    <th class="text-center">${item.fechaTurno}</th>
                     <th class="text-center">${item.turnoId}</th>
                     <th class="text-center">${item.medicoId}</th>
                     <th class="text-center">${item.pacienteId}</th>
@@ -37,23 +39,35 @@ function getTurnos(){
 getTurnos();
 
 buttonCrear.addEventListener('click', ()=> {
+    let medico=document.getElementById("medicoId").value
+    let paciente=document.getElementById("pacienteId").value
+    let fecha=document.getElementById("fechaTurno").value
+    let observacion=document.getElementById("observacion").value
+
     const newTurno = {
-        medicoId: 'medicoId',
-        pacienteId: 'pacienteId',
-        fechaTurno: 'fechaTurno',
-        observacion: 'observacion',
-        estadoTurno: 'estadoTurno'
+        medicoId: medico,
+        pacienteId: paciente,
+        fechaTurno: fecha,
+        observacion: observacion,
+        estadoTurno: true
 
-    }
+}
 
-    fetch(urlTurnos, {
+    fetch('https://localhost:7299/api/turnos', {
         method: 'POST',
-        body: JSON.stringify(),
+        body: JSON.stringify(newTurno),
         headers: {
-            "content-type": "application/json"
+            "content-type": "application/json",
+            'Accept': 'application/json',
         }
     }).then(res => res.json(newTurno))
-      .then(data => console.log(data))
+      .then(datos => close())    
+      $(modal).modal('hide')
 })
+
+
+
+  
+
 
 

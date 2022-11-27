@@ -1,6 +1,6 @@
 const urlUsers = 'https://localhost:7297/api/users'
 
-export const registerUser=()=> {
+const registerUser=()=> {
     let userPostBody = {
         username : document.getElementById("userName").value,
         email : document.getElementById("email").value,
