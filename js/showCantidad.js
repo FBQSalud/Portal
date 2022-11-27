@@ -16,12 +16,13 @@ function getCantidadEnfermeras(){
             let datos = JSON.parse(this.responseText);
             let res = document.querySelector('#emp');
             res.innerHTML = '';
-
-            for(let item of datos){
+            
+            datos.forEach(function (datos){
+                console.log(datos)
                 res.innerHTML += `              
-                ${item = countEnfermeras++}                 
+                ${datos = countEnfermeras++}                 
                 `
-            }          
+            })          
         }
     }
 }

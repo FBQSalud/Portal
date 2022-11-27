@@ -117,6 +117,16 @@ p {
     padding-bottom: 20px;
 }
 
+#btn_turnosModal {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
+.btnTurnosModal {
+    padding-bottom: 20px;
+}
+
 #btn_enfermeras {
     padding-top: 10px;
     padding-bottom: 10px;

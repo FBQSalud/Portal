@@ -25,6 +25,16 @@ function getPacientes(){
                     <th class="text-center">${item.apellido}</th>
                     <th class="text-center">${item.edad}</th>
                     <th class="text-center">${item.dni}</th>
+                    <th>
+                         <div class="table-data-feature">
+                         <button class="item" data-toggle="tooltip" data-placement="top" onClick="Observacion()" title="Observaciones">
+                            <i class="zmdi zmdi-edit"></i>
+                         </button>
+                         <button class="item" data-toggle="tooltip" data-placement="top" onClick="Atendido()" title="Atendido">
+                            <i class="zmdi zmdi-account"></i>
+                        </button>                                                      
+                         </div>
+                    </th>
                 </tr>
                 `
             }          
@@ -32,3 +42,12 @@ function getPacientes(){
     }
 }
 getPacientes();
+
+function Observacion(){
+    console.log('hola desde Observacion')
+}
+
+function Atendido(){
+    console.log('hola desde Atendido')
+}
+

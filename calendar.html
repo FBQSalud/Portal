@@ -69,17 +69,6 @@
                             <a href="calendar.html">
                                 <i class="fas fa-calendar-alt"></i>Turnos</a>
                         </li>                       
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-sign-in-alt"></i>Panel de Logeo</a>
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
-                                <li>
-                                    <a href="login.html">Login</a>
-                                </li>
-                                <li>
-                                    <a href="register.html">Registro</a>
-                                </li>
-                            </ul>
                         </li>
                         <li>
                             <a href="stock.html">
@@ -105,7 +94,7 @@
                         <div class="header-wrap">
                             <form class="form-header" action="" method="POST">
                                 <input class="au-input au-input--xl" type="text" name="search" placeholder="Buscar..." />
-                                <button id="btn_buscar" class="au-btn--submit" type="submit">
+                                <button class="au-btn--submit" type="submit">
                                     <i class="zmdi zmdi-search"></i>
                                 </button>
                             </form>
@@ -116,7 +105,7 @@
                                             <img src="images/icon/FBQ.SALUD1.png" alt="John Doe" />
                                         </div>
                                         <div class="content">
-                                            <a class="js-acc-btn" href="#">Admin</a>
+                                            <a class="js-acc-btn" href="login.html">Usuario</a>
                                         </div>
                                         <div class="account-dropdown js-dropdown">
                                             <div class="info clearfix">
@@ -127,23 +116,23 @@
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="name">
-                                                        <a href="#">Admin</a>
+                                                        <a href="login.html">Claudio</a>
                                                     </h5>
-                                                    <span class="email">admin@example.com</span>
+                                                    <span class="email">Claudio@FBQ.Salud.com</span>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-account"></i>Cuenta</a>
+                                                    <a href="login.html">
+                                                        <i class="zmdi zmdi-account"></i>Login</a>
                                                 </div>
                                                 <div class="account-dropdown__item">
-                                                    <a href="#">
-                                                        <i class="zmdi zmdi-settings"></i>Configuracion</a>
+                                                    <a href="register.html">
+                                                        <i class="zmdi zmdi-settings"></i>Registrarse</a>
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="#">
+                                                <a href="login.html">
                                                     <i class="zmdi zmdi-power"></i>Salir</a>
                                             </div>
                                         </div>
@@ -155,7 +144,48 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
-
+            <!-- MODAL TURNO-->
+            <div class="modal fade" id="turnoModal" tabindex="-1" role="dialog" aria-labelledby="turnoModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="turnoModalLabel">Turnos</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="form-group">
+                            <label for="medicoId" class="col-form-label">Medico:</label>
+                            <input type="text" class="form-control" id="medicoId">
+                          </div>
+                          <div class="form-group">
+                            <label for="pacienteId" class="col-form-label">Paciente:</label>
+                            <input type="text" class="form-control" id="pacienteId">
+                          </div>
+                          <div class="form-group">
+                            <label for="fechaTurno" class="col-form-label">Fecha Turno:</label>
+                            <input type="text" class="form-control" id="fechaTurno">
+                          </div>
+                          <div class="form-group">
+                            <label for="observacion" class="col-form-label">Observacion:</label>
+                            <input type="text" class="form-control" id="observacion">
+                          </div>
+                          <div class="form-group">
+                            <label for="estadoTurno" class="col-form-label">Estado Turno:</label>
+                            <input type="text" class="form-control" id="estadoTurno">
+                          </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                      <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIN MODAL TURNO-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -165,7 +195,8 @@
                                 <h3 class="title-5 m-b-35">Turnos</h3>
                                 <!-- DATA TABLE-->   
                                 <div class="btnTurnos">
-                                <button class="btn btn-success" id="btn_turnos">Lista de turnos</button>   
+                                <button type="button" class="btn btn-primary" id="btn_turnos">Ver lista de turnos</button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#turnoModal" data-whatever="@getbootstrap">Agregar Turno</button>  
                                 </div>                         
                                 <div class="table-responsive m-b-40">                                   
                                     <table class="table table-borderless table-data3">

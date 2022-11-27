@@ -1,5 +1,7 @@
 const urlTurnos = 'https://localhost:7299/api/turnos';
 
+const buttonCrear = document.getElementById('agregar');
+
 document.querySelector('#btn_turnos').addEventListener('click', getTurnos);
 
 function getTurnos(){
@@ -33,3 +35,25 @@ function getTurnos(){
     }
 }
 getTurnos();
+
+buttonCrear.addEventListener('click', ()=> {
+    const newTurno = {
+        medicoId: 'medicoId',
+        pacienteId: 'pacienteId',
+        fechaTurno: 'fechaTurno',
+        observacion: 'observacion',
+        estadoTurno: 'estadoTurno'
+
+    }
+
+    fetch(urlTurnos, {
+        method: 'POST',
+        body: JSON.stringify(),
+        headers: {
+            "content-type": "application/json"
+        }
+    }).then(res => res.json(newTurno))
+      .then(data => console.log(data))
+})
+
+
