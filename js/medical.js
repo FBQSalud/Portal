@@ -1,5 +1,6 @@
 const urlPacientes = 'https://localhost:7299/api/pacientes';
 const urlHistoriaClinica = 'https://localhost:7299/api/historiaClinica';
+
 const buttonCrear = document.getElementById('atender');
 
 const modal = document.getElementById('turnoModal');

@@ -17,12 +17,15 @@ function getCantidadEnfermeras(){
             let res = document.querySelector('#emp');
             res.innerHTML = '';
             
+            console.log([].concat.apply([], datos).length)                
+             
             datos.forEach(function (datos){
-                console.log(datos)
+                console.log(datos.count)
                 res.innerHTML += `              
                 ${datos = countEnfermeras++}                 
                 `
-            })          
+            })   
+                   
         }
     }
 }

@@ -42,19 +42,6 @@ function getUsuarios(){
                     <th class="text-center">${item.employeeId}</th>
                     <th class="text-center"><span class="status--process">${status}</span></th>
                     <th class="text-center">${rol}</th>
-                    <th>
-                         <div class="table-data-feature">
-                         <button class="item" data-toggle="tooltip" data-placement="top" title="Agregar">
-                            <i class="zmdi zmdi-plus"></i>
-                         </button>
-                         <button class="item" data-toggle="tooltip" data-placement="top" title="Editar">
-                            <i class="zmdi zmdi-edit"></i>
-                         </button>
-                         <button class="item" data-toggle="tooltip" data-placement="top" title="Eliminar">
-                            <i class="zmdi zmdi-delete"></i>
-                        </button>                                                      
-                         </div>
-                    </th>
                 </tr>
                 `
             }          
