@@ -36,7 +36,7 @@ function getUsuariosPortal(){
                 }
 
                 res.innerHTML += `  
-                <div class="au-message__item">
+                <div class="au-message__item-unread">
                  <div class="au-message__item-inner">
                     <div class="au-message__item-text">
                         <div class="avatar-wrap">
