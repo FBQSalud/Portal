@@ -1,4 +1,4 @@
-const urlTurnos = 'https://localhost:7299/api/turnos';
+const urlTurnos = 'https://localhost:7298/api/turnos';
 
 const buttonCrear = document.getElementById('agregar');
 
@@ -53,7 +53,7 @@ buttonCrear.addEventListener('click', ()=> {
 
 }
 
-    fetch('https://localhost:7299/api/turnos', {
+    fetch('https://localhost:7298/api/turnos', {
         method: 'POST',
         body: JSON.stringify(newTurno),
         headers: {
@@ -63,6 +63,8 @@ buttonCrear.addEventListener('click', ()=> {
     }).then(res => res.json(newTurno))
       .then(datos => close())    
       $(modal).modal('hide')
+      location.reload()
+      
 })
 
 

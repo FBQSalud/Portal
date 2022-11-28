@@ -113,6 +113,12 @@ p {
     background-color: #333333;
 }
 
+#btn_add {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #333333;
+}
+
 .btnTurnos {
     padding-bottom: 20px;
 }

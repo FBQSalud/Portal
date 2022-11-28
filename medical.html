@@ -143,7 +143,41 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
-                   
+            <!-- MODAL medical-->
+  <div class="modal fade" id="turnoModal" tabindex="-1" role="dialog" aria-labelledby="turnoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Atender Paciente</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group" id="turnoModalLabel">
+                <label for="medicoId" class="col-form-label">Id del paciente :</label>
+                <input type="text" class="form-control" id="pacienteid">
+              </div>
+              <div class="form-group">
+                <label for="pacienteId" class="col-form-label">diagnostico :</label>
+                <input type="text" class="form-control" id="diagnostico">
+              </div>
+              <div class="form-group">
+                <label for="fechaTurno" class="col-form-label">medicamento :</label>
+                <input type="text" class="form-control" id="medicamento">
+              </div>
+              
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" id="agregar" class="btn btn-primary">Atender</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN MODAL medical-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -153,8 +187,11 @@
                                 <h3 class="title-5 m-b-35">Medicos</h3>
                                 <!-- DATA TABLE-->   
                                 <div class="btnPacientes">
-                                <button class="btn btn-success" id="btn_pacientes">Lista de pacientes del dia</button>   
-                                </div>                         
+                                <button class="btn btn-success" id="btn_pacientes">Lista de pacientes del dia</button>
+                                <button type="button" class="btn btn-primary"id= "btn_add"  data-toggle="modal" data-target="#turnoModal" data-whatever="@getbootstrap">Atender Paciente</button>    
+                                </div>      
+                                
+                                </div>                       
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>

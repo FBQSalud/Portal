@@ -142,7 +142,44 @@
                 </div>
             </header>
             <!-- HEADER DESKTOP-->
-
+  <!-- MODAL user-->
+  <div class="modal fade" id="turnoModal" tabindex="-1" role="dialog" aria-labelledby="turnoModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Crear Usuario</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group" id="turnoModalLabel">
+                <label for="medicoId" class="col-form-label">Nombre De Usuario :</label>
+                <input type="text" class="form-control" id="UserName">
+              </div>
+              <div class="form-group">
+                <label for="pacienteId" class="col-form-label">DNI :</label>
+                <input type="text" class="form-control" id="DNI">
+              </div>
+              <div class="form-group">
+                <label for="fechaTurno" class="col-form-label">Contraseña :</label>
+                <input type="text" class="form-control" id="password">
+              </div>
+              <div class="form-group">
+                <label for="observacion" class="col-form-label">Email :</label>
+                <input type="text" class="form-control" id="email">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+          <button type="button" id="agregar" class="btn btn-primary">Agregar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- FIN MODAL user-->
             <!-- MAIN CONTENT-->
             <div class="main-content">
                 <div class="section__content section__content--p30">
@@ -153,8 +190,9 @@
                                 <h3 class="title-5 m-b-35">Usuarios</h3>
                                 <div class="btnPacientes">
                                     <button class="btn btn-success" id="btn_usuarios">Lista de Usuarios</button>   
-                                    <button class="btn btn-success" id="btn_masusuarios">Agregar Usuario</button> 
-                                    </div>                                 
+                                    <button type="button" class="btn btn-primary"id= "btn_add"  data-toggle="modal" data-target="#turnoModal" data-whatever="@getbootstrap">Agregar Usuario</button> 
+                                    </div>    
+                                    
                                 <div class="table-responsive table-responsive-data2">
                                     <table class="table table-data2">
                                         <thead>
@@ -162,7 +200,7 @@
                                                 <th class="text-center">fecha</th>
                                                 <th class="text-center">email</th>
                                                 <th class="text-center">nombre</th>                                               
-                                                <th class="text-center">descripcion</th>                                               
+                                                <th class="text-center">Id</th>                                               
                                                 <th class="text-center">estado</th>
                                                 <th class="text-center">rol</th>
                                                 <th class="text-center">Acciones</th>

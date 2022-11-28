@@ -1,4 +1,8 @@
-const urlPacientes = 'https://localhost:7299/api/pacientes';
+const urlPacientes = 'https://localhost:7298/api/pacientes';
+
+const buttonCrear = document.getElementById('agregar');
+
+const modal = document.getElementById('turnoModal');
 
 document.querySelector('#btn_pacientes').addEventListener('click', getPacientes);
 
@@ -42,6 +46,34 @@ function getPacientes(){
     }
 }
 getPacientes();
+
+buttonCrear.addEventListener('click', ()=> {
+    let pacienteid=document.getElementById("pacienteid").value
+    let diagnostico=document.getElementById("diagnostico").value
+    let medicamento=document.getElementById("medicamento").value
+
+    const newTratamiento = {
+        pacienteid: pacienteid,
+        diagnostico: diagnostico,
+        medicamento: medicamento,
+
+}
+
+    fetch('https://localhost:7298/api/turnos', {
+        method: 'POST',
+        body: JSON.stringify(newTratamiento),
+        headers: {
+            "content-type": "application/json",
+            'Accept': 'application/json',
+        }
+    }).then(res => res.json(newTratamiento))
+      .then(datos => close())    
+      $(modal).modal('hide')
+      location.reload()
+      
+})
+
+
 
 function Observacion(){
     console.log('hola desde Observacion')
