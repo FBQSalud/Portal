@@ -1,4 +1,4 @@
-const urlUsuarios = 'https://localhost:7298/api/users'
+const urlUsuarios = 'https://localhost:7297/api/users'
 
 const buttonCrear = document.getElementById('agregar');
 
@@ -81,7 +81,7 @@ buttonCrear.addEventListener('click', ()=> {
 
 }
 console.log(JSON.stringify(newUser))
-    fetch('https://localhost:7298/api/users', {
+    fetch('https://localhost:7297/api/users', {
         method: 'POST',
         body: JSON.stringify(newUser),
         headers: {

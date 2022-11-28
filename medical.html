@@ -156,23 +156,23 @@
         <div class="modal-body">
           <form>
             <div class="form-group" id="turnoModalLabel">
-                <label for="medicoId" class="col-form-label">Id del paciente :</label>
+                <label for="medicoId" class="col-form-label">Nro de orden del paciente :</label>
                 <input type="text" class="form-control" id="pacienteid">
               </div>
               <div class="form-group">
-                <label for="pacienteId" class="col-form-label">diagnostico :</label>
-                <input type="text" class="form-control" id="diagnostico">
+                <label for="pacienteId" class="col-form-label">diagnostico y tratamiento:</label>
+                <textarea class="form-control" id="diagnostico"></textarea>
               </div>
               <div class="form-group">
-                <label for="fechaTurno" class="col-form-label">medicamento :</label>
-                <input type="text" class="form-control" id="medicamento">
+                <label for="fechaTurno" class="col-form-label">Fecha Atención :</label>
+                <input type="text" class="form-control" id="fechaApertura">
               </div>
               
           </form>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-          <button type="button" id="agregar" class="btn btn-primary">Atender</button>
+          <button type="button" id="atender" class="btn btn-primary">Atender Paciente</button>
         </div>
       </div>
     </div>
@@ -201,6 +201,7 @@
                                                 <th class="text-center">Apellido</th>
                                                 <th class="text-center">Edad</th>
                                                 <th class="text-center">DNI</th>
+                                                <th class="text-center">Estado</th>
                                                 <th class="text-center">Acciones</th>
                                             </tr>
                                         </thead>

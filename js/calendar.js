@@ -1,4 +1,4 @@
-const urlTurnos = 'https://localhost:7298/api/turnos';
+const urlTurnos = 'https://localhost:7299/api/turnos';
 
 const buttonCrear = document.getElementById('agregar');
 

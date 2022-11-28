@@ -2,6 +2,10 @@ const urlInsumos = 'https://localhost:7296/api/Insumos';
 
 document.querySelector('#btn_insumos').addEventListener('click', getInsumos);
 
+const modal = document.getElementById('stockModal');
+
+const buttonStock = document.getElementById('agregar');
+
 function getInsumos(){
 
     const xhttp = new XMLHttpRequest();
@@ -31,4 +35,30 @@ function getInsumos(){
     }
 }
 getInsumos();
+
+buttonStock.addEventListener('click', ()=> {
+    let insumo=document.getElementById("insumo").value
+    let especialidad=document.getElementById("especialidad").value
+    let stock=document.getElementById("stock").value
+
+    const newInsumo = {
+        insumosId: 0,
+        nombre: insumo,
+        especialidad: especialidad,
+        stock: stock
+}
+
+    fetch('https://localhost:7296/api/Insumos', {
+        method: 'POST',
+        body: JSON.stringify(newInsumo),
+        headers: {
+            "content-type": "application/json",
+            'Accept': 'application/json',
+        }
+    }).then(res => res.json(newInsumo))
+      .then(datos => close())    
+      $(modal).modal('hide')
+      location.reload()
+      
+})
 
