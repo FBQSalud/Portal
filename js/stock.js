@@ -55,10 +55,10 @@ buttonStock.addEventListener('click', ()=> {
             "content-type": "application/json",
             'Accept': 'application/json',
         }
-    }).then(res => res.json(newInsumo))
-      .then(datos => close())    
+    }).then(res => res.json(newInsumo))  
       $(modal).modal('hide')
-      location.reload()
+      .then(
+      location.reload())
       
 })
 

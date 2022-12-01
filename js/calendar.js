@@ -1,3 +1,4 @@
+
 const urlTurnos = 'https://localhost:7299/api/turnos';
 
 const buttonCrear = document.getElementById('agregar');
@@ -10,7 +11,7 @@ function getTurnos(){
 
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open('GET', urlTurnos, true);
+    xhttp.open('GET', 'https://localhost:7299/api/turnos', true);
 
     xhttp.send();
 
@@ -53,17 +54,19 @@ buttonCrear.addEventListener('click', ()=> {
 
 }
 
-    fetch('https://localhost:7298/api/turnos', {
+
+    fetch('https://localhost:7299/api/turnos', {
         method: 'POST',
         body: JSON.stringify(newTurno),
         headers: {
             "content-type": "application/json",
             'Accept': 'application/json',
+    
         }
-    }).then(res => res.json(newTurno))
-      .then(datos => close())    
+    }).then(res => res.json(newTurno)) 
       $(modal).modal('hide')
-      location.reload()
+     
+  
       
 })
 
