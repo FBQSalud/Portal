@@ -1,8 +1,8 @@
-const urlInsumos = 'https://localhost:7296/api/Insumos';
+const urlInsumos = 'http://localhost:7296/api/Insumos';
 
 document.querySelector('#btn_insumos').addEventListener('click', getInsumos);
 
-const modal = document.getElementById('stockModal');
+const modal1 = document.getElementById('stockModal');
 
 const buttonStock = document.getElementById('agregar');
 
@@ -56,7 +56,7 @@ buttonStock.addEventListener('click', ()=> {
             'Accept': 'application/json',
         }
     }).then(res => res.json(newInsumo))  
-      $(modal).modal('hide')
+      $(modal1).modal('hide')
       .then(
       location.reload())
       

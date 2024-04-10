@@ -1,4 +1,4 @@
-const urlCantidadEnfermeras = "https://localhost:7298/api/enfermeras";
+const urlCantidadEnfermeras = "http://localhost:7298/api/enfermeras";
 
 function getCantidadEnfermeras(){
 

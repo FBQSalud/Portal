@@ -1,5 +1,5 @@
 
-const urlTurnos = 'https://localhost:7299/api/turnos';
+const urlTurnos = 'http://localhost:7299/api/turnos';
 
 const buttonCrear = document.getElementById('agregar');
 
@@ -11,7 +11,7 @@ function getTurnos(){
 
     const xhttp = new XMLHttpRequest();
 
-    xhttp.open('GET', 'https://localhost:7299/api/turnos', true);
+    xhttp.open('GET', urlTurnos, true);
 
     xhttp.send();
 
@@ -55,7 +55,7 @@ buttonCrear.addEventListener('click', ()=> {
 }
 
 
-    fetch('https://localhost:7299/api/turnos', {
+    fetch(urlTurnos, {
         method: 'POST',
         body: JSON.stringify(newTurno),
         headers: {

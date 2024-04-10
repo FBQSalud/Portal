@@ -1,4 +1,4 @@
-const urlEnfermeras = 'https://localhost:7298/api/enfermeras';
+const urlEnfermeras = 'http://localhost:5192/api/enfermeras';
 
 document.querySelector('#btn_enfermeras').addEventListener('click', getEnfermeras);
 

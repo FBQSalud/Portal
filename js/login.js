@@ -1,4 +1,4 @@
-const urlLogin = 'https://localhost:7297/api/admin/login';
+const urlLogin = 'http://localhost:7297/api/admin/login';
 const buttonLogin = document.getElementById('login');
 
 buttonLogin.addEventListener('click', (callback)=> {
@@ -7,7 +7,7 @@ buttonLogin.addEventListener('click', (callback)=> {
         password : document.getElementById("password").value,
     };
     (async () => {
-        const rawResponse = await fetch('https://localhost:7297/api/admin/login', {
+        const rawResponse = await fetch(urlLogin, {
           method: 'POST',
           headers: {
             'Accept': 'application/json',

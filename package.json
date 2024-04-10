@@ -1,5 +1,11 @@
 {
   "dependencies": {
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
   }
 }

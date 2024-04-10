@@ -1,4 +1,4 @@
-const urlCantidadTurnos = "https://localhost:7299/api/turnos";
+const urlCantidadTurnos = "http://localhost:7299/api/turnos";
 
 function getCantidadTurnos(){
 

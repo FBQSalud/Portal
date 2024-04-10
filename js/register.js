@@ -1,4 +1,4 @@
-const urlUsers = 'https://localhost:7297/api/users'
+const urlUsers = 'http://localhost:7297/api/users'
 
 const registerUser=()=> {
     let userPostBody = {
