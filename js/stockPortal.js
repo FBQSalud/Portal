@@ -1,4 +1,4 @@
-const urlInsumosPortal = 'https://localhost:7296/api/Insumos';
+const urlInsumosPortal = 'http://localhost:7296/api/Insumos';
 
 document.querySelector('#btn_insumos_portal').addEventListener('click', getInsumosPortal);
 

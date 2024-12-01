@@ -1,8 +1,8 @@
-const urlInsumos = 'https://localhost:7296/api/Insumos';
+const urlInsumos = 'http://localhost:7296/api/Insumos';
 
 document.querySelector('#btn_insumos').addEventListener('click', getInsumos);
 
-const modal = document.getElementById('stockModal');
+const modal2 = document.getElementById('stockModal');
 
 const buttonStock = document.getElementById('agregar');
 
@@ -48,7 +48,7 @@ buttonStock.addEventListener('click', ()=> {
         stock: stock
 }
 
-    fetch('https://localhost:7296/api/Insumos', {
+    fetch('http://localhost:7296/api/Insumos', {
         method: 'POST',
         body: JSON.stringify(newInsumo),
         headers: {
@@ -56,9 +56,7 @@ buttonStock.addEventListener('click', ()=> {
             'Accept': 'application/json',
         }
     }).then(res => res.json(newInsumo))  
-      $(modal).modal('hide')
-      .then(
-      location.reload())
+      $(modal2).modal('hide')
       
 })
 

@@ -1,4 +1,4 @@
-const urlUsuarios = 'https://localhost:7297/api/users'
+const urlUsuarios = 'http://localhost:7298/api/users'
 
 document.querySelector('#btn_usuariosPortal').addEventListener('click', getUsuariosPortal);
 
