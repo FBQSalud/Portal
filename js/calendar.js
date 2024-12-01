@@ -38,7 +38,6 @@ document.addEventListener("DOMContentLoaded", function() {
         };
     }
 
-    // Add event listener for 'agregar' button
     if (buttonCrear) {
         buttonCrear.addEventListener('click', () => {
             let medico = document.getElementById("medicoId").value;
@@ -62,10 +61,9 @@ document.addEventListener("DOMContentLoaded", function() {
                     'Accept': 'application/json',
                 }
             }).then(res => res.json())
-              .then(() => $(modal).modal('hide')); // Hide modal after submitting
+              .then(() => $(modal).modal('hide'));
         });
     }
 
-    // Fetch turnos initially
     getTurnos();
 });
