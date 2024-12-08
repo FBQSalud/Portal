@@ -1,4 +1,4 @@
-const urlUsuarios = 'ttp://localhost:7297/api/users'
+const urlUsuarios = 'http://localhost:7298/api/users'
 
 const buttonCrear = document.getElementById('agregar');
 

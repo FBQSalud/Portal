@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 for (let item of datos) {
                     res.innerHTML += `              
                     <tr class="large">
-                        <th class="text-center">${item.fechaTurno}</th>
+                         <th class="text-center">${new Date(item.fechaTurno).toLocaleString()}</th>     
                         <th class="text-center">${item.turnoId}</th>
                         <th class="text-center">${item.medicoId}</th>
                         <th class="text-center">${item.pacienteId}</th>

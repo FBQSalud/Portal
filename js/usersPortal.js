@@ -41,7 +41,8 @@ function getUsuariosPortal(){
                     <div class="au-message__item-text">
                         <div class="avatar-wrap">
                             <div class="avatar">
-                                <img src=${item.picture}>
+                            <img src="images/icon/${item.picture}" alt="Image" onerror="this.src='images/icon/undefined.jpg'">
+
                             </div>
                         </div>
                     <div class="text">
