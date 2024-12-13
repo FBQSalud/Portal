@@ -50,12 +50,25 @@ function getUsuarios(){
 }
 getUsuarios();
 
-buttonCrear.addEventListener('click', ()=> {
-    let userName =document.getElementById("UserName").value
-    let dni=document.getElementById("DNI").value
-    let password=document.getElementById("password").value
-    let email=document.getElementById("email").value
+buttonCrear.addEventListener('click', async () => {
+    // Obtener valores de los inputs
+    let userName = document.getElementById("UserName").value.trim();
+    let dni = document.getElementById("DNI").value.trim();
+    let password = document.getElementById("password").value.trim();
+    let email = document.getElementById("email").value.trim();
 
+    // Validar campos vacíos
+    if (!userName || !dni || !password || !email) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Campos vacíos',
+            text: 'Por favor, completa todos los campos.',
+            confirmButtonText: 'Entendido'
+        });
+        return;
+    }
+
+    // Construir objeto del nuevo usuario
     const newUser = {
         userName: userName,
         dni: dni,
@@ -64,18 +77,52 @@ buttonCrear.addEventListener('click', ()=> {
         rolId: 2,
         password: password,
         picture: 'default.jpg',
-   
+    };
 
-}
-console.log(JSON.stringify(newUser))
-    fetch(urlUsuarios, {
-        method: 'POST',
-        body: JSON.stringify(newUser),
-        headers: {
-            "content-type": "application/json",
-            'Accept': 'application/json',
+    console.log(JSON.stringify(newUser)); // Para depuración
+
+    try {
+        // Hacer la solicitud POST al servidor
+        const response = await fetch(urlUsuarios, {
+            method: 'POST',
+            body: JSON.stringify(newUser),
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json",
+            },
+        });
+
+        // Verificar si la respuesta es correcta
+        if (response.ok) {
+            const result = await response.json();
+            Swal.fire({
+                icon: 'success',
+                title: 'Usuario creado',
+                text: 'El usuario se ha creado exitosamente.',
+                confirmButtonText: 'Entendido'
+            }).then(() => {
+                // Cerrar el modal y recargar o actualizar la página
+                $('#modal').modal('hide');
+                location.reload(); // Considera actualizar solo la tabla en lugar de recargar la página completa.
+            });
+        } else {
+            // Manejar errores del servidor
+            const errorData = await response.json();
+            Swal.fire({
+                icon: 'error',
+                title: 'Error al crear el usuario',
+                text: errorData.message || 'Ocurrió un error en el servidor.',
+                confirmButtonText: 'Entendido'
+            });
         }
-    }).then(res => res.json(newUser))   
-    $(modal).modal('hide')
-    location.reload();
-})
+    } catch (error) {
+        // Manejar errores de red
+        console.error('Error al conectarse con el servidor:', error);
+        Swal.fire({
+            icon: 'error',
+            title: 'Error del servidor',
+            text: 'No se pudo conectar con el servidor. Por favor, intenta más tarde.',
+            confirmButtonText: 'Entendido'
+        });
+    }
+});
