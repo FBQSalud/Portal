@@ -87,9 +87,9 @@
                         </li>
                     </li> 
                     <li>
-                        <a href="#" id="logoutButton">
-                            <i class="fa fa-power-off"></i> Cerrar sesión
-                        </a>
+                        <a href="login.html" id="logoutButton">
+                            <i class="zmdi zmdi-power"></i>Salir
+                        </a>                        
                     </li>                                                                        
                 </li>
                     </ul>
@@ -115,7 +115,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/FBQ.SALUD1.png" alt="John Doe" />
+                                            <img src="images/icon/FBQ.SALUD1.png" alt="FBQ.Salud" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="login.html">Usuario</a>
@@ -124,16 +124,23 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/FBQ.SALUD1.png" alt="John Doe" />
+                                                        <img src="images/icon/FBQ.SALUD1.png" alt="FBQ.Salud" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
-                                                    <h5 class="name">
-                                                        <a href="login.html">Claudio</a>
+                                                    <h5 class="name" id="userName">
+                                                        <a href="login.html">Usuario</a>
                                                     </h5>
-                                                    <span class="email">Claudio@FBQ.Salud.com</span>
+                                                    <span class="email" id="userEmail">correo@example.com</span>
                                                 </div>
+                                                <div class="account-dropdown__body" id="authOptions">
+                                                    <div class="account-dropdown__item">
+                                                        <a href="register.html">
+                                                            <i class="zmdi zmdi-settings"></i>Registrarse</a>
+                                                    </div>
+                                                </div>                                                
                                             </div>
+                                            <!-- Aquí va el bloque que mencionas -->
                                             <div class="account-dropdown__body">
                                                 <div class="account-dropdown__item">
                                                     <a href="login.html">
@@ -145,10 +152,11 @@
                                                 </div>
                                             </div>
                                             <div class="account-dropdown__footer">
-                                                <a href="login.html">
-                                                    <i class="zmdi zmdi-power"></i>Salir</a>
+                                                <a href="login.html" id="logoutButton">
+                                                    <i class="zmdi zmdi-power"></i>Salir
+                                                </a>                                                
                                             </div>
-                                        </div>
+                                        </div>                                        
                                     </div>
                                 </div>
                             </div>
@@ -166,8 +174,9 @@
                             <div class="col-md-12">
                                 <div class="overview-wrap">
                                     <h2 class="title-1">FBQ.Salud Panel</h2>
-                                    <button class="au-btn au-btn-icon au-btn--blue">
-                                        <i class="zmdi zmdi-plus"></i>agregar</button>
+                                    <button class="au-btn au-btn-icon au-btn--blue" data-toggle="modal" data-target="#comunicacionModal">
+                                        <i class="zmdi zmdi-plus"></i>Agregar Comunicación
+                                    </button>                                    
                                 </div>
                             </div>
                         </div>
@@ -304,62 +313,16 @@
                                         <div class="au-task__title">
                                             <p>Info general</p>
                                         </div>
+                                        <!-- Lista dinámica de comunicaciones -->
                                         <div class="au-task-list js-scrollbar3">
-                                            <div class="au-task__item au-task__item--danger">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Reunion medicos</a>
-                                                    </h5>
-                                                    <span class="time">10:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Reunion enfermeras</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--primary">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Simulacro de evacuacion</a>
-                                                    </h5>
-                                                    <span class="time">02:00 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--success">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Actualizacion de sistemas</a>
-                                                    </h5>
-                                                    <span class="time">03:30 PM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--danger js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Reunion de empleados</a>
-                                                    </h5>
-                                                    <span class="time">10:00 AM</span>
-                                                </div>
-                                            </div>
-                                            <div class="au-task__item au-task__item--warning js-load-item">
-                                                <div class="au-task__item-inner">
-                                                    <h5 class="task">
-                                                        <a href="#">Descarga de insumos</a>
-                                                    </h5>
-                                                    <span class="time">11:00 AM</span>
-                                                </div>
-                                            </div>
+                                            <!-- Aquí se insertarán las comunicaciones dinámicamente desde el backend -->
                                         </div>
                                         <div class="au-task__footer">
-                                            <button class="au-btn au-btn-load js-load-btn">Cargar mas</button>
+                                            <button class="au-btn au-btn-load js-load-btn" id="btn-load-comunicaciones">Cargar Más</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div>                            
                             <div class="col-lg-6">
                                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
                                     <div class="au-card-title" style="background-image:url('images/bg-title-02.jpg');">
@@ -382,51 +345,7 @@
                                             <div class="au-message__footer">
                                                 <button class="au-btn au-btn-load js-load-btn">Cargar mas</button>
                                             </div>
-                                        </div>
-                                        <div class="au-chat">
-                                            <div class="au-chat__title">
-                                                <div class="au-chat-info">
-                                                    <div class="avatar-wrap online">
-                                                        <div class="avatar avatar--small">
-                                                            <img src="images/icon/avatar-01.jpg" alt="John Smith">
-                                                        </div>
-                                                    </div>
-                                                    <span class="nick">
-                                                        <a href="#">John Smith</a>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            <div class="au-chat__content">
-                                                <div class="recei-mess-wrap">
-                                                    <span class="mess-time">12 Min ago</span>
-                                                    <div class="recei-mess__inner">
-                                                        <div class="avatar avatar--tiny">
-                                                            <img src="images/icon/avatar-02.jpg" alt="John Smith">
-                                                        </div>
-                                                        <div class="recei-mess-list">
-                                                            <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                            <div class="recei-mess">Donec tempor, sapien ac viverra</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="send-mess-wrap">
-                                                    <span class="mess-time">30 Sec ago</span>
-                                                    <div class="send-mess__inner">
-                                                        <div class="send-mess-list">
-                                                            <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="au-chat-textfield">
-                                                <form class="au-form-icon">
-                                                    <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">
-                                                    <button class="au-input-icon">
-                                                        <i class="zmdi zmdi-camera"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        </div>                                       
                                     </div>
                                 </div>
                             </div>
@@ -496,9 +415,38 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="copyright">
-                                    <p>Copyright © 2022 FBQ.Salud. | All rights reserved.</a>.</p>
+                                    <p>Copyright © 2022 FBQ.Salud. | All rights reserved. Template by Cofee Team</a>.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal para agregar comunicación -->
+            <div class="modal fade" id="comunicacionModal" tabindex="-1" role="dialog" aria-labelledby="comunicacionModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="comunicacionModalLabel">Agregar Comunicación</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="comunicacionForm">
+                                <div class="form-group">
+                                    <label for="comunicacionName">Título de la Comunicación</label>
+                                    <input type="text" class="form-control" id="comunicacionName" placeholder="Ingresa el título">
+                                </div>
+                                <div class="form-group">
+                                    <label for="fechaComunicacion">Fecha</label>
+                                    <input type="date" class="form-control" id="fechaComunicacion">
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" id="guardarComunicacion" class="btn btn-primary">Guardar Comunicación</button>
                         </div>
                     </div>
                 </div>
@@ -539,11 +487,15 @@
     <script src="js/showCantidadMedicos.js"></script>
     <script src="js/showCantidadPacientes.js"></script>
     <script src="js/showCantidadTurnos.js"></script>
+    <script src="js/showCantidadEmpleados.js"></script>
+    <script src="js/showCantidadComunicaciones.js"></script>
     <script src="js/usersPortal.js"></script>
-    <script src="js/session.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
     <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/authGuard.js"></script>
+
 </body>
 
 </html>

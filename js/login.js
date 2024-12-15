@@ -1,15 +1,13 @@
 const urlLogin = 'http://localhost:7298/api/admin/login';
-const buttonLogin = document.getElementById('login');
 
-// Validar si el botón existe en el DOM
-if (!buttonLogin) {
-    console.error('El botón login no se encontró en el DOM.');
-} else {
-    buttonLogin.addEventListener('click', async () => {
+const buttonLogin = document.getElementById('login');
+if (buttonLogin) {
+    buttonLogin.addEventListener('click', async (event) => {
+        event.preventDefault();
+
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
 
-        // Validar campos vacíos
         if (!email || !password) {
             Swal.fire({
                 icon: 'warning',
@@ -20,9 +18,7 @@ if (!buttonLogin) {
             return;
         }
 
-        // Validar formato del correo
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             Swal.fire({
                 icon: 'warning',
                 title: 'Formato de correo inválido',
@@ -32,10 +28,9 @@ if (!buttonLogin) {
             return;
         }
 
-        let jsonBody = { email, password };
+        const jsonBody = { email, password };
 
         try {
-            // Mostrar loader mientras se procesa la solicitud
             Swal.fire({
                 title: 'Iniciando sesión...',
                 allowOutsideClick: false,
@@ -44,24 +39,20 @@ if (!buttonLogin) {
                 }
             });
 
-            // Realizar la solicitud al backend
-            const rawResponse = await fetch(urlLogin, {
+            const response = await fetch(urlLogin, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(jsonBody),
             });
 
-            // Cerrar el loader
             Swal.close();
 
-            // Procesar respuesta
-            if (rawResponse.ok) {
-                const content = await rawResponse.json();
-
-                // Mostrar mensaje de éxito
+            if (response.ok) {
+                const { token } = await response.json();
+                localStorage.setItem('authToken', token);
                 Swal.fire({
                     icon: 'success',
                     title: 'Inicio de sesión exitoso',
@@ -70,13 +61,9 @@ if (!buttonLogin) {
                     timerProgressBar: true,
                     showConfirmButton: false
                 }).then(() => {
-                    // Guardar token en localStorage y redirigir
-                    localStorage.setItem('authToken', content.token);
                     window.location.href = "index.html";
                 });
-
-            } else if (rawResponse.status === 401) {
-                // Mostrar mensaje de error de credenciales
+            } else if (response.status === 401) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Credenciales incorrectas',
@@ -84,17 +71,15 @@ if (!buttonLogin) {
                     confirmButtonText: 'Intentar de nuevo'
                 });
             } else {
-                // Manejar otros errores del backend
-                const errorContent = await rawResponse.json();
+                const error = await response.json();
                 Swal.fire({
                     icon: 'error',
                     title: 'Error',
-                    text: errorContent.message || 'Ocurrió un error inesperado.',
+                    text: error.message || 'Ocurrió un error inesperado.',
                     confirmButtonText: 'Entendido'
                 });
             }
         } catch (error) {
-            // Manejar errores de red o del servidor
             console.error('Error del servidor:', error);
             Swal.fire({
                 icon: 'error',
@@ -105,5 +90,23 @@ if (!buttonLogin) {
         }
     });
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const authToken = localStorage.getItem('authToken');
+
+    // Si ya existe un token, redirigir al panel
+    if (authToken && window.location.pathname.includes("login.html")) {
+        window.location.href = "index.html";
+    }
+});
+
+
+
+
+
+
+
+
+
 
 

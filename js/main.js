@@ -2,22 +2,6 @@
     // USE STRICT
     "use strict"; 
 
-    document.addEventListener('DOMContentLoaded', () => {
-      const logoutButton = document.getElementById('logoutButton');
-  
-      if (logoutButton) {
-          console.log('El botón de cerrar sesión se encontró.');
-          logoutButton.addEventListener('click', (event) => {
-              console.log('Botón clickeado');
-              event.preventDefault(); // Prevenir recarga de página
-              localStorage.removeItem('authToken'); // Eliminar token
-              window.location.href = "login.html"; // Redirigir
-          });
-      } else {
-          console.warn("El botón de cerrar sesión no existe en el DOM. Verifica tu HTML.");
-      }
-  });   
-
   try {
     //WidgetChart 1
     var ctx = document.getElementById("widgetChart1");
